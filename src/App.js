@@ -4,11 +4,30 @@ import Formulario from "./components/Formulario";
 import Cita from "./components/Cita";
 
 function App() {
-  const [citas, guardarCitas] = React.useState([]);
+  
+  let citasIniciales = ( localStorage.getItem('citas')? JSON.parse(localStorage.getItem('citas')): [] )
+  
+ 
+
+  const [citas, guardarCitas] = React.useState(citasIniciales);
 
   const CrearCita = (cita) => {
     guardarCitas([...citas, cita]);
   };
+  
+  const EliminarCita = id => {
+    const nuevasCitas = citas.filter(cita => cita.id !== id)
+    guardarCitas(nuevasCitas)
+  }
+
+  React.useEffect( () => {
+    if(citasIniciales){
+      localStorage.setItem('citas', JSON.stringify(citas))
+    }
+    else{
+      localStorage.setItem('citas', JSON.stringify([]))
+    }
+  },[citas]);
 
   return (
     <React.Fragment>
@@ -22,7 +41,7 @@ function App() {
             <h1>Administracion de citas</h1>
             <div className="d-flex justify-content-center">
               {citas.map((cita) => (
-                <Cita key={cita.id} cita={cita} />
+                <Cita key={cita.id} cita={cita} EliminarCita={EliminarCita} />
               ))}
             </div>
           </div>

@@ -57,6 +57,8 @@ const Formulario = ({ crearCita }) => {
     
   };
 
+  
+
   return (
     <React.Fragment>
       <h1>Crear Cita</h1>
@@ -124,8 +126,8 @@ const Formulario = ({ crearCita }) => {
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary mb-2">
-          Confirm identity
+        <button type="submit" className="btn btn-primary mb-2 w-100">
+          Agregar Cita
         </button>
       </form>
     </React.Fragment>

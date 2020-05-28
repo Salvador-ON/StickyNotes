@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Cita = ({cita}) => {
+const Cita = ({cita, EliminarCita}) => {
 
-  const { mascota, dueño, fecha, hora, sintomas } = cita;
+  const { mascota, dueño, fecha, hora, sintomas, id } = cita;
 
   return (
     <div className="card mb-2 mr-2" style={{width: "18rem"}}>
@@ -13,7 +13,7 @@ const Cita = ({cita}) => {
         <p className="card-text">
           {sintomas}
         </p>
-        <button className="btn btn-danger">Eliminar</button>
+        <button className="btn btn-danger" onClick={()=>EliminarCita(id)}>Eliminar</button>
       </div>
     </div>
   );
