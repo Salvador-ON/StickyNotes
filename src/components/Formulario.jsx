@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from 'prop-types';
 
 const Formulario = ({ crearCita }) => {
   const [cita, useCita] = React.useState({
@@ -133,5 +134,10 @@ const Formulario = ({ crearCita }) => {
     </React.Fragment>
   );
 };
+
+
+Formulario.propTypes ={
+  crearCita: PropTypes.func.isRequired
+}
 
 export default Formulario;

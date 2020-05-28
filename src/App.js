@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Formulario from "./components/Formulario";
 import Cita from "./components/Cita";
 
+
 function App() {
   
   let citasIniciales = ( localStorage.getItem('citas')? JSON.parse(localStorage.getItem('citas')): [] )
@@ -27,7 +28,7 @@ function App() {
     else{
       localStorage.setItem('citas', JSON.stringify([]))
     }
-  },[citas]);
+  },[citas, citasIniciales]);
 
   return (
     <React.Fragment>
