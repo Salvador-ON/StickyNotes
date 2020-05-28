@@ -1,9 +1,14 @@
 # Sticky Notes Reminders
 
+- This Web App was built with React. 
+- The user can create new sticky notes reminders. And see it in the same window.
+- The notes hava a color in relation to the priority.
+- All the notes are save in local storage.
+
 ## ScreenShots
 
-![](./dist/assets/media/weather-devises.PNG)
-![](./dist/assets/media/app.gif)
+![](./screenshots/devices-sticky.PNG)
+![](./screenshots/devices-sticky.PNG)
 
 ## Live Version
 
@@ -22,6 +27,7 @@ Live version [here](https://sticky-notes-reminders.netlify.app//).
 - CSS.
 - React.
 - JavaScript.
+- Bootstrap.
 
 ## Setup
 
