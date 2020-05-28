@@ -9,7 +9,7 @@ const Cita = ({ cita, EliminarCita }) => {
    
   const priorityColor = () => {
    let colorClass =""
-   console.log(priority);
+
     switch (priority) {
       case "High":
         colorClass = "card mb-2 mr-2 text-white w-100 bg-danger"
@@ -24,7 +24,7 @@ const Cita = ({ cita, EliminarCita }) => {
         colorClass = "card mb-2 mr-2 text-white w-100 bg-secondary"
         break;
     }
-    console.log(colorClass);
+
     return colorClass;
   };
 

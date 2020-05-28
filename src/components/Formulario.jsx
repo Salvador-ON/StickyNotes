@@ -76,17 +76,7 @@ const Formulario = ({ crearCita }) => {
           ></input>
         </div>
 
-        {/* <div className="form-group">
-          <label className="mx-2">Priority</label>
-          <input
-            type="text"
-            name="priority"
-            placeholder="Priority"
-            className="form-control"
-            onChange={HandleCita}
-            value={priority}
-          ></input>
-        </div> */}
+        
 
         <div className="form-group">
           <label className="mx-2 text-white font-weight-bold">Priority</label>
@@ -96,11 +86,11 @@ const Formulario = ({ crearCita }) => {
             onChange={HandleCita}
             value={priority}
           >
-            <option value="" disabled selected>Select your option</option>
-            <option>High</option>
-            <option>Medium</option>
-            <option>Low</option>
-            <option>N/A</option>
+            <option disabled value="">Select your option</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            <option  value="N/A">N/A</option>
           </select>
         </div>
 

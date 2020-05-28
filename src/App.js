@@ -35,10 +35,10 @@ function App() {
       <h1>Sticky Notes</h1>
       <div className="conatiner-fluid">
         <div className="row d-flex justify-content-center">
-          <div className="col-5 mx-1">
+          <div className="col-11 col-md-5 mx-1">
             <Formulario crearCita={CrearCita} />
           </div>
-          <div className="col-5 mx-1">
+          <div className="col-11 col-md-5 mx-2">
             <h1>Notes</h1>
             <div className="">
               {citas.map((cita) => (
