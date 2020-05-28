@@ -8,7 +8,7 @@
 ## ScreenShots
 
 ![](./screenshots/devices-sticky.PNG)
-![](./screenshots/devices-sticky.PNG)
+![](./screenshots/sticky-screen.png)
 
 ## Live Version
 
