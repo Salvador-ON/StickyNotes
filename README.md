@@ -2,7 +2,7 @@
 
 - This Web App was built with React. 
 - The user can create new sticky notes reminders. And see it in the same window.
-- The notes hava a color in relation to the priority.
+- The notes have a color in relation to the priority.
 - All the notes are save in local storage.
 
 ## ScreenShots
