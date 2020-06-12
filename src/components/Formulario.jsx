@@ -1,14 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Formulario = ({ crearCita }) => {
   const [cita, useCita] = React.useState({
-    mascota: "",
-    dueño: "",
+    title: "",
+    priority: "",
     fecha: "",
-    hora: "",
-    sintomas: "",
+    description: "",
   });
 
   const [error, useError] = React.useState(false);
@@ -21,7 +20,7 @@ const Formulario = ({ crearCita }) => {
     });
   };
 
-  const { mascota, dueño, fecha, hora, sintomas } = cita;
+  const { title, priority, fecha, description } = cita;
 
   const SetError = (value) => {
     useError(value);
@@ -29,11 +28,10 @@ const Formulario = ({ crearCita }) => {
 
   const ResetCita = () => {
     useCita({
-      mascota: "",
-      dueño: "",
+      title: "",
+      priority: "",
       fecha: "",
-      hora: "",
-      sintomas: "",
+      description: "",
     });
   };
 
@@ -41,11 +39,10 @@ const Formulario = ({ crearCita }) => {
     e.preventDefault();
 
     if (
-      mascota.trim() === "" ||
-      dueño.trim() === "" ||
+      title.trim() === "" ||
+      priority.trim() === "" ||
       fecha.trim() === "" ||
-      hora.trim() === "" ||
-      sintomas.trim() === ""
+      description.trim() === ""
     ) {
       SetError(true);
       return;
@@ -54,49 +51,51 @@ const Formulario = ({ crearCita }) => {
     SetError(false);
     crearCita(cita);
     ResetCita();
-
-    
   };
-
-  
 
   return (
     <React.Fragment>
-      <h1>Crear Cita</h1>
+      <h1>Create Note</h1>
 
       {error ? (
         <div className="alert alert-danger" role="alert">
-          Todos los campos son obligatorios
+          All fields are mandatory
         </div>
       ) : null}
 
       <form onSubmit={submitCita}>
         <div className="form-group">
-          <label className="mx-2">Nombre Mascota</label>
+          <label className="mx-2 text-white font-weight-bold">Title</label>
           <input
             type="text"
-            name="mascota"
-            placeholder="Nombre de la Mascota"
+            name="title"
+            placeholder="Title"
             className="form-control"
             onChange={HandleCita}
-            value={mascota}
+            value={title}
           ></input>
         </div>
 
+        
+
         <div className="form-group">
-          <label className="mx-2">Nombre Dueño</label>
-          <input
-            type="text"
-            name="dueño"
-            placeholder="Nombre del Dueño"
+          <label className="mx-2 text-white font-weight-bold">Priority</label>
+          <select
+            name="priority"
             className="form-control"
             onChange={HandleCita}
-            value={dueño}
-          ></input>
+            value={priority}
+          >
+            <option disabled value="">Select your option</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            <option  value="N/A">N/A</option>
+          </select>
         </div>
 
         <div className="form-group">
-          <label className="mx-2">Fecha Visita</label>
+          <label className="mx-2 text-white font-weight-bold">Date</label>
           <input
             type="date"
             name="fecha"
@@ -107,37 +106,25 @@ const Formulario = ({ crearCita }) => {
         </div>
 
         <div className="form-group">
-          <label className="mx-2">Hora Visita</label>
-          <input
-            type="time"
-            name="hora"
-            className="form-control"
-            onChange={HandleCita}
-            value={hora}
-          ></input>
-        </div>
-
-        <div className="form-group">
-          <label className="mx-2">Descripcion</label>
+          <label className="mx-2 text-white font-weight-bold">Description</label>
           <textarea
-            name="sintomas"
+            name="description"
             className="form-control"
             onChange={HandleCita}
-            value={sintomas}
+            value={description}
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary mb-2 w-100">
-          Agregar Cita
+        <button type="submit" className="btn btn-success mb-2 w-100">
+          Add Note
         </button>
       </form>
     </React.Fragment>
   );
 };
 
-
-Formulario.propTypes ={
-  crearCita: PropTypes.func.isRequired
-}
+Formulario.propTypes = {
+  crearCita: PropTypes.func.isRequired,
+};
 
 export default Formulario;
